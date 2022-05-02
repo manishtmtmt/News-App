@@ -11,6 +11,20 @@ let container = document.getElementById("results")
 let country = document.getElementById("countries").children
 console.log(country);
 
+let defaultNews = async () =>{
+    try{
+        let res = await fetch("https://masai-mock-api.herokuapp.com/news/top-headlines?country=in")
+        let data = await res.json();
+        console.log(data);
+        append(data.articles, container)
+    }
+    catch(err){
+        console.log(err);
+    }
+}
+
+defaultNews();
+
 let qSearch = (e) => {
     if(e.key == "Enter") {
         window.location.href = "search.html"  
