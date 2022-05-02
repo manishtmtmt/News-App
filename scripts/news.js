@@ -2,6 +2,15 @@
 import { navbar } from "../components/navbar.js";
 document.getElementById("navbar").innerHTML = navbar();
 
+let qSearch = (e) => {
+    if(e.key == "Enter") {
+        window.location.href = "search.html"  
+        localStorage.setItem("q", JSON.stringify(document.getElementById("search_input").value))
+    }
+}
+
+document.getElementById("search_input").addEventListener("keydown", qSearch)
+
 let news = JSON.parse(localStorage.getItem("news"))
 console.log(news);
 
