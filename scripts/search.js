@@ -3,7 +3,7 @@
 
 import { navbar } from "../components/navbar.js";
 import { sidebar } from "../components/sidebar.js";
-import { countries, queries, append } from "./fetch.js";
+import { countries, queries } from "./fetch.js";
 
 
 document.getElementById("navbar").innerHTML = navbar();
