@@ -7,7 +7,6 @@ import { countries, queries } from "./fetch.js";
 
 
 document.getElementById("navbar").innerHTML = navbar();
-document.getElementById("sidebar").innerHTML = sidebar();
 
 let q = JSON.parse(localStorage.getItem("q"));
 console.log(q);
