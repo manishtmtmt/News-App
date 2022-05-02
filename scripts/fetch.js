@@ -30,6 +30,10 @@ let append = (data, container) => {
     data.forEach((el)=>{
         let news = document.createElement("div")
         news.setAttribute("class", "news")
+        let imgBox = document.createElement("div")
+        imgBox.setAttribute("class", "imgBox")
+        let data = document.createElement("div")
+        data.setAttribute("class", "data")
         let image = document.createElement("img")
         image.src = el.urlToImage;
         let h3 = document.createElement("h3")
@@ -37,7 +41,9 @@ let append = (data, container) => {
         let des = document.createElement("p")
         des.innerText = el.description;
 
-        news.append(image, h3, des)
+        imgBox.append(image)
+        data.append(h3, des)
+        news.append(imgBox, data)
         container.append(news)
     })
     
